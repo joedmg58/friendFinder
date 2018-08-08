@@ -12,8 +12,8 @@ app.use( bodyParser.json() );
 var PORT = process.env.PORT || 8080;
 
 //import modules for routes ( api and html files )
-require( './routing/apiRoutes.js' )( app );
-require( './routing/htmlRoutes.js' )( app );
+require( './app/routing/apiRoutes.js' )( app );
+require( './app/routing/htmlRoutes.js' )( app );
 
 
 //---------- Server start listening ----------
