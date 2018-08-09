@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Friend Finder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS 4.1.2 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        <!-- jQUery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JS 4.1.2 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- Font Awesome Glyphicons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+        <div class="container shadow p-3 mb-5 mt-3 bg-light rounded">
+
+            <h2>Survey Questions</h2>
+            <hr>
+
+            <h3><strong>About You</strong></h3>
+            <h4>Name <span class="text-danger">*</span></h4>
+            <input type="text" class="form-control" required>
+            <br>
+
+            <h4>Link to photo image <span class="text-danger">*</span></h4>
+            <input type="text" class="form-control" required>
+
+            <hr>
+
+            <!-- Question 1 -->
+            <h3><strong>Question 1</strong></h3>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q1Options" id="q1Radio1" value="1">
+                <label class="form-check-label" for="q1Radio1">1 (Strongly Disagree)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q1Options" id="q1Radio2" value="2">
+                <label class="form-check-label" for="q1Radio2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q1Options" id="q1Radio3" value="3">
+                <label class="form-check-label" for="q1Radio3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q1Options" id="q1Radio4" value="4">
+                <label class="form-check-label" for="q1Radio4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q1Options" id="q1Radio5" value="5">
+                <label class="form-check-label" for="q1Radio5">5 (Strongly Agree)</label>
+            </div>
+            
+            <br><br>
+            
+            <!-- Question 2 -->
+            <h3><strong>Question 2</strong></h3>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q2Options" id="q2Radio1" value="1">
+                <label class="form-check-label" for="q2Radio1">1 (Strongly Disagree)</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q2Options" id="q2Radio2" value="2">
+                <label class="form-check-label" for="q2Radio2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q2Options" id="q2Radio3" value="3">
+                <label class="form-check-label" for="q2Radio3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q2Options" id="q2Radio4" value="4">
+                <label class="form-check-label" for="q2Radio4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="q2Options" id="q2Radio5" value="5">
+                <label class="form-check-label" for="q2Radio5">5 (Strongly Agree)</label>
+            </div>
+
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/">Home</a> | <a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/joedmg58/friendFinder" target="_blank">GitHub Repo</a></p>
+            </div>
+        </footer>
+
+        <!-- MODAL DIALOG goes here, for showing the friend match result -->
+
+        <script type="text/javascript">
+            //here comes the code for: 
+            //  capturing survey data
+            //  validating questions
+            //  AJAX request for posting data
+            //  showing the result in a modal dialog
+        </script>
+
+    </body>
+</html>
