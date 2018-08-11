@@ -29,17 +29,17 @@
             <form action="/api/friends" method="POST">
                 <h3><strong>About You</strong></h3>
                 <h4>Name <span class="text-danger">*</span></h4>
-                <input type="text" class="form-control" name="name" required>
+                <input type="text" class="form-control" name="name" id="name" required>
                 <br>
 
                 <h4>Link to photo image <span class="text-danger">*</span></h4>
-                <input type="text" class="form-control" name="photo" required>
+                <input type="text" class="form-control" name="photo" id="photo" required>
 
                 <hr>
 
                 <div class="questions_container"></div>
 
-                <button id="submitBtn" type="submit" class="btn btn-primary btn-lg btn-block mb-3 mt-3">Submit</button>
+                <button id="submitBtn" type="button" class="btn btn-primary btn-lg btn-block mb-3 mt-3">Submit</button>
 
             </form>
 
@@ -63,7 +63,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <p>Your compatible friend is :</p>
+                      <p>Your compatible friend is :<span id="matched_friend"></span></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -116,11 +116,29 @@
                 event.preventDefault();
 
                 var sendData = {
-                    
+                    name: $('#name').val().trim(),
+                    photo: $('#photo').val().trim(),
+                    scores:[
+                        parseInt( $("input[name='q1Options']:checked").val() ),
+                        parseInt( $("input[name='q2Options']:checked").val() ),
+                        parseInt( $("input[name='q3Options']:checked").val() ),
+                        parseInt( $("input[name='q4Options']:checked").val() ),
+                        parseInt( $("input[name='q5Options']:checked").val() ),
+                        parseInt( $("input[name='q6Options']:checked").val() ),
+                        parseInt( $("input[name='q7Options']:checked").val() ),
+                        parseInt( $("input[name='q8Options']:checked").val() ),
+                        parseInt( $("input[name='q9Options']:checked").val() ),
+                        parseInt( $("input[name='q10Options']:checked").val() )
+                    ]
                 }
                 
                 $.post('/api/friends', sendData, function( receivedData ){
                     //show received data in a modal dialog
+                    //location.reload();
+
+                    $('#matched_friend').text( receivedData.name );
+                    $('.modal').modal('toggle');
+                    
                 });
             });
 

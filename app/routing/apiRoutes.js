@@ -10,7 +10,8 @@ module.exports = function( app ){
 
     app.post( '/api/friends', function( req, res ){
 
-        /* var body = req.body;
+        /* 
+        var body = req.body;
 
         var friend = {
             'name': body.name,
@@ -28,15 +29,28 @@ module.exports = function( app ){
                 parseInt( body.q10Options ) 
             ]
         }
-
-        //Friend compatibility logic here
-
-        friendsData.push( friend );
-
-        //res.json( friend );
-
-        res.redirect('/'); */
-
+        */
+        console.log( req.body );
         
+        var rxData = req.body;
+        var us1 = rxData.scores;
+
+        var matched_index = 0;
+        var best_match = 100;
+
+        for (var i=0; i<friendsData.length; i++){
+            var us2 = friendsData[i].scores;
+            var totalDif = 0;
+            for (var j=0; j<us2.length; j++){
+                totalDif += Math.abs( us2[j] - us1[j] );
+            }
+            if (totalDif < best_match){
+                matched_index = i;
+                best_match = totalDif;
+            }
+        }
+
+        friendsData.push( rxData );
+        res.json( friendsData[ matched_index ] ); 
     } );
 }
