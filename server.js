@@ -17,6 +17,6 @@ require( './app/routing/htmlRoutes.js' )( app );
 
 
 //---------- Server start listening ----------
-app.listen( PORT, 'localhost', function() {
+app.listen( PORT, function() {
     console.log( 'Friend Finder on http://localhost:' + PORT );
 });
