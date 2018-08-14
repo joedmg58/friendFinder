@@ -9,7 +9,7 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 app.use( bodyParser.json() );
 
 // set initial port
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 //import modules for routes ( api and html files )
 require( './app/routing/apiRoutes.js' )( app );
